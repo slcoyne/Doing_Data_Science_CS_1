@@ -1,0 +1,40 @@
+---
+title: "Case Study 1 Write Up"
+author: "Sam Coyne"
+date: "March 20, 2017"
+output: 
+  html_document:
+    keep_md: true
+
+##Introduction
+
+This analysis details the steps performed to analyze two economic data sets published by the World Bank for the year 2012. The goal of this analysis is to determine if a given country’s GDP is a good indicator of income group. There are two data sources from the World Bank. The first data set (GDP and ranks) can be downloaded from either of these sites:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv
+
+http://data.worldbank.org/data-catalog/GDP-ranking-table
+
+The second data set (educational) can be downloaded from either of these sites:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv
+
+http://data.worldbank.org/data-catalog/ed-stats
+
+If replicating this study, please note both data sets need to be cleaned. Also, it should be noted, the educational data set contains many more variables than we will use in this analysis. For a complete list of variables removed, please consult with the README in the Github repository. 
+
+The data files are stored as follows:
+File name (GDP) getdata_data_GDP – raw data file only.
+
+File name (Education) getdata_data_EDSTATS_Country – raw data file only
+
+*Headers are easily located in the Education data set, but be aware the GDP will require one to skip the first five lines
+before reading headers.
+
+*Both data sets are delimited by a comma (CSV)
+The final and tidy data set consists of the following variables:
+
+```{r}
+source("./main.R")
+```
+
+
