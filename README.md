@@ -16,44 +16,75 @@ economy: name of country
 millions of us dollars: GDP expressed in US dollars
 
 getdata_data_EDSTATS_Country--raw data:
+
 CountryCode:three letter code designating country
+
 Long Name: The complete country name for the country code
+
 Income Group: classification/grouping of country.There are five levels of income group:
 	1.) High Income: nonOECD
 	2.) High Income: oECD
 	3.) Low Income
 	4.) Lower middle income
 	5.) Upper middle income
+	
 Region: geographic classification
+
 Lending Category: lending category
 	1.) IDA
 	2.) IBRD
 	3.) Blend
+	
 Other Groups: Other lending groups
+
 Currency Unit:currency of country
+
 Latest population census: year when the last census was conducted
+
 Latest household survey: name and data of household survey
+
 Special Notes: this is designated for other comments. This variable will not impact the analysis. 
+
 National accounts base year: base year
+
 National accounts reference year: reference year
+
 System of National Accounts: year
+
 SNA price valuation: System of National Accounts price valuation
+
 Alternative conversion factor: year range
+
 PPP survey year:PPP survey year
+
 Balance of Payments Manual in use: balance
+
 External debt Reporting status: reporting method
+
 System of trade: general vs. special
+
 Government Accounting concept: Consolidated vs. Budgetary
+
 IMF data dissemination standard: GDDS or SDDS
+
 Source of most recent Income and expenditure data: data source
+
 Vital registration complete: Yes or No
+
 Latest agricultural census: Year last taken
+
 Latest industrial data: Year last taken
+
 Latest trade data: Year
+
 Latest water withdrawal data: Year
+
 2-alpha code: two alpha country code
+
 WB-2 code: two alpha country code
+
 Table Name: country name
+
 Short Name: short country name
 
 notes on terms: 
