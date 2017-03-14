@@ -96,6 +96,6 @@ IDA = International Development Association: "...a multi-issue institution, supp
 
 Blend=countries eligible for both IDA and IBRD loans (paraphrased from ida.worldbank.org/about/borrowing-countries)
 
-IBRD = Internaional Bank for REconstruction and Development: "IBRD provides loans and other assistance primarily to middle income countries"(worldbank.org/en/about/what-we-do/brief/ibrd).
+IBRD = Internaional Bank for REconstruction and Development: "IBRD provides loans and other assistance primarily to middle income countries"(worldbank.org/en/about/what-we-do/brief/ibrd)
 
 SNA = source (https://stats.oecd.org/glossary/about.asp#Acronyms)
