@@ -8,8 +8,11 @@ Original filename: getdata_data_EDSTATS_Country
 clean filename: education
 
 getdata_data_GDP variable names--raw data:
+
 ranking: rank of each country's GDP, where GDP is expressed in US dollars
+
 economy: name of country
+
 millions of us dollars: GDP expressed in US dollars
 
 getdata_data_EDSTATS_Country--raw data:
