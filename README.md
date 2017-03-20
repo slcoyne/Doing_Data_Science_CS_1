@@ -1,7 +1,7 @@
 # Doing_Data_Science_CS_1
 Case study 1 for Doing Data Science
 
-This case study accomplishes data cleansing, merging, analysis, and visualization of two data sets from the World Bank. The case study write up contains the summary, analysis, and conclusion. This README also offers interested readers a place to learn more about the variables and their description. Some of these variables may be of interest for additional research. The makefile structure of this analysis will download the data sources to one's working directory as well as clean up any data formatting issues (NAs, etc). For those wihtout an economics background, a glossary of terms can be found in teh case study write up.
+This case study accomplishes data cleansing, merging, analysis, and visualization of two data sets from the World Bank. The case study write up contains the summary, analysis, and conclusion. This README also offers interested readers a place to learn more about the variables and their description. Some of these variables may be of interest for additional research. The makefile structure of this analysis will download the data sources to one's working directory as well as clean up any data formatting issues (NAs, etc.). For those without an economics background, a glossary of terms can be found in the case study write up.
 
 Source files:
 Original filename: getdata_data_EDSTATS_Country
