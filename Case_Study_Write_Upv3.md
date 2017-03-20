@@ -3,24 +3,19 @@ Sam Coyne
 March 20, 2017  
 ##Introduction
 
-This analysis details the steps performed to analyze two economic data sets published by the World Bank for the year 2012. The goal of this analysis is to develop a tidy data set fit for a macroeconomic analysis. Specifically, this analysis will begin to ask if a given country’s GDP is a good indicator of income group. There are two data sources from the World Bank. The first data set (GDP) can be downloaded from either of these sites:
+This analysis details the steps performed to analyze two economic data sets published by the World Bank for the year 2012. The goal of this analysis is to develop a tidy data set appropriate for a macroeconomic analysis. Specifically, this analysis will begin to ask if a given country’s GDP is a good indicator of income group and vice versa. There are two data sources from the World Bank. The first data set (GDP) can be downloaded from either of these sites:
 
-https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv
+[https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv]
 
-http://data.worldbank.org/data-catalog/GDP-ranking-table
+[http://data.worldbank.org/data-catalog/GDP-ranking-table]
 
 The second data set (educational) can be downloaded from either of these sites:
 
-https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv
+[https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv]
 
-http://data.worldbank.org/data-catalog/ed-stats
+[http://data.worldbank.org/data-catalog/ed-stats]
 
 If replicating this study, be aware both data sets need to be cleaned. Also, it should be noted, the educational data set contains many more variables than we will use in this analysis. For a complete list of variables removed, please consult with the README in the Github repository.  
-
-The data files are stored as follows:
-GDP file name (raw data only): getdata_data_GDP
-
-Education file name (raw data only): getdata_data_EDSTATS_Country
 
 *Headers are easily located in the Education data set, but be aware the GDP will require one to skip the first five lines before reading headers.
 
@@ -38,7 +33,7 @@ Education file name (raw data only): getdata_data_EDSTATS_Country
 
 5. income_group: a classification variable assigned by the World Bank
 
-6. geographic_region: geographic_region: character value giving the reader more description if unfamiliar with country's geography
+6. geographic_region: geographic_region: character value giving the reader more description if unfamiliar with a country's geography
 
 7. quantile: a simple rating (1-5) of GDP rank. There are 190 possible GDP ranks. As such, each quantile has 38 countries. Every country in a certain quantile is     assigned the same quantile score.
 
@@ -55,7 +50,7 @@ GDP = Gross Domestic Product, "GDP is the monetary value of all the finished goo
 
 OECD = The Organization for Economic Co-Operation and Development: "The mission...is to promote policies that will improve the economic and social well-being of people around the world" (oecd.org/about).
 
-Raw data – The data as obtained from the World Bank. No cleaning or manipulation steps have been taken. Interested readers are encouraged to seek meaningful insight from other variables found in the raw data files. See the README for a full description of available variables. 
+Raw data = The data as obtained from the World Bank. No cleaning or manipulation steps have been taken. Interested readers are encouraged to seek meaningful insight from other variables found in the raw data files. See the README for a full description of available variables. 
 
 ##Files for Analysis:
 
@@ -78,7 +73,11 @@ Raw data – The data as obtained from the World Bank. No cleaning or manipulati
     *quantile analysis based on GDP ranks
 
 ##Directions to Run the Code
-The R script, main.R, will run three separate R scripts: download_packages_and_data, clean_and_merge, and analysis. If the user has specific questions relating to data cleaning, please review the script clean_and_merge. Likewise, the same is true for analysis. If the user does not need to download ggplot2 or downloader, comment these commands out with hashtag x 2. Also, if the World Bank URL's are not working properly, store the raw data files in the proper directory and proceed with running the analysis. The end user should also be aware the final tidy data set will be written to the directory upon completion of the script. This is intended for users who wish to do additional analysis or make more visualizations.
+The R script, main.R, will run three separate R scripts: download_packages_and_data, clean_and_merge, and analysis. If the user has specific questions relating to data cleaning, please review the script clean_and_merge. Likewise, the same is true for analysis. If the user does not need to download ggplot2 or downloader, comment these commands out with hashtag x 2. Also, if the World Bank URL's are not working properly, store the raw data files in the proper directory and proceed with running the analysis. The end user should also be aware the final tidy data set will be written to the working directory upon completion of the script. This is intended for users who wish to do additional analysis or make more visualizations. When the user runs main.R, the files written to the working directory are as follows:
+
+GDP file name (raw data only): getdata_data_GDP
+
+Education file name (raw data only): getdata_data_EDSTATS_Country
 
 To source the main.R script, please use the following command. 
 
@@ -174,15 +173,15 @@ rowSums(count_quantile_1)
 As one can see, the quantiles are evenly distributed with 38 countries appearing in each quantile. A table calculation reveals that there are only five lower middle income countries in quantile one. Not surprisingly, High Income: OECD countries still lead the count in this analysis with 18 of the top rank positions, or 47.37%.
 
 ##Conclusion
-From the above plots and analysis, it appears the Organization for Economic Cooperation and Development (OECD), is a strong indicator of GDP performance. The organization’s purpose, “the governments of 34 democracies with market economies work with each other, as well as with more than 70 non-member economies to promote economic growth, prosperity, and sustainable development” (usoecd.ucmission.gov/mission/overview/html) is consistent with the above findings. Although GDP is not the only indicator of economic health, it is certainly a crucial part in overall health. According to the OECD, members “account for 63% of world GDP, three-quarters of world trade, and 95 percent of world official development assistance…” ( usoecd.ucmission.gov/mission/overview/html). As observed in the above analysis, 18 out of the 38 first quartile countries are fit into the income category “High income: OECD.” This is possibly due to the sharing of best practices in economic development the organization promotes. By encouraging collaboration and knowledge sharing, the OECD appears have a positive impact on a country’s GDP performance. 
+From the above plots and analysis, it appears the Organization for Economic Cooperation and Development (OECD), is a strong indicator of GDP performance. The organization’s purpose, “the governments of 34 democracies with market economies work with each other, as well as with more than 70 non-member economies to promote economic growth, prosperity, and sustainable development” (usoecd.ucmission.gov/mission/overview/html) is consistent with the above findings. Although GDP is not the only indicator of economic health, it is certainly a crucial part in overall health. According to the OECD, members “account for 63% of world GDP, three-quarters of world trade, and 95 percent of world official development assistance…” ( usoecd.ucmission.gov/mission/overview/html). As observed in the above analysis, 18 out of the 38 first quartile countries are classified as “High income: OECD” in terms of income group. This is possibly due to the sharing of best practices in economic development the organization promotes. By encouraging collaboration and knowledge sharing, the OECD appears have a positive impact on a country’s GDP performance. 
 
 
 ##Further Work
 This analysis clarifies the relationship between OECD status and gross domestic product. To expand upon this work, it is recommended one pull in additional years from the World Bank. This time series approach would reveal macroeconomic trends in OECD countries versus nonOECD countries. Another idea for additional research is to subset the raw data by geographic regions and complete “region specific” analyses. This subset approach may help answer any geographic specific questions. Suggested R packages for the above suggested analyses are zoo and ggmap. More information on those packages can be found here: 
 
-https://cran.rproject.org/web/packages/ggmap/index.html
+[https://cran.rproject.org/web/packages/ggmap/index.html]
 
-https://cran.r-project.org/web/packages/zoo/index.html
+[https://cran.r-project.org/web/packages/zoo/index.html]
 
 A final tidy data set is written to the user’s working directory. This may be useful if one has access to visualization software such as Tableau and would like to graphically explore more aspects of this data set. 
 
@@ -205,28 +204,13 @@ sum(is.na(combined_data))
 ```
 
 ```r
-#This code tells us all NA’s found. By conducting a closer inspection of variables, we see the main issue 
-#is the mismatched countries.
+#This code tells us all NA’s found. By conducting a closer inspection of variables
 
 #The result is a total of 66 NA's in our data set.
 
 #However, we need to look at each variable to understand where the NAs are originating.
-sum(is.na(combined_data$country_code))
-```
-
-```
-## [1] 0
-```
-
-```r
-sum(is.na(combined_data$ranking))
-```
-
-```
-## [1] 21
-```
-
-```r
+#sum(is.na(combined_data$country_code))
+#sum(is.na(combined_data$ranking))
 sum(is.na(combined_data$economy))
 ```
 
@@ -235,45 +219,18 @@ sum(is.na(combined_data$economy))
 ```
 
 ```r
-sum(is.na(combined_data$GDP_USD_MM))
+#sum(is.na(combined_data$GDP_USD_MM))
+#sum(is.na(combined_data$country_name))
+#sum(is.na(combined_data$income_group))
+#sum(is.na(combined_data$geographic_region))
 ```
 
-```
-## [1] 21
-```
+The above tells us that 21 NAs are found in neighboring columns/variables: ranking, economy, and GDP.  
+There are 211 countries in the resulting data frame 21 countries do not match on country code and 190 match on country code.
 
-```r
-sum(is.na(combined_data$country_name))
-```
+The below code is not executed due to length. However, use this R code to see a list of countries that do not match.
 
-```
-## [1] 1
-```
-
-```r
-sum(is.na(combined_data$income_group))
-```
-
-```
-## [1] 1
-```
-
-```r
-sum(is.na(combined_data$geographic_region))
-```
-
-```
-## [1] 1
-```
-
-```r
-#The above tells us that 21 NAs are found in neighboring columns/variables: ranking, economy, and GDP.  
-#There are 211 countries in the resulting data frame 21 countries do not match on country code and 190 match on country code.
-
-#The below code is not executed due to length. However, use this R code to see a list of countries that do not match.
-
-#combined_data[is.na(combined_data$economy),]
-```
+combined_data[is.na(combined_data$economy),]
 
 2. Sort the data frame in ascending order by GDP (so United States is last). What is the 13th country in the resulting data frame?
 
@@ -290,10 +247,12 @@ look_at_all_na <- apply(combined_data_final_sorted, 1, function(x){any(is.na(x))
 
 #make an object to filter out the NA's
 combined_data_final_sorted_filtered <- combined_data_final_sorted[!look_at_all_na,]
-
-#We find the 13th country in the resulting data frame to be St. Kitts and Nevis ($767MM GDP) tied with Grenada.
-#The relatively low GDP of Saint Kitts and Nevis is “likely due to the declining state-owned sugar company…” as well as "S. Kitts is dependent upon tourism to drive #its economy" (https://en.wikipedia.org/wiki/Saint_Kitts).
 ```
+
+We find the 13th country in the resulting data frame to be St. Kitts and Nevis ($767MM GDP) tied with Grenada.
+
+The relatively low GDP of Saint Kitts and Nevis is “likely due to the declining state-owned sugar company…” as well as "S. Kitts is dependent upon tourism to drive #its economy" (https://en.wikipedia.org/wiki/Saint_Kitts).
+
 
 3. What are the average GDP rankings for the "High income: OECD" and "High income: nonOECD" groups?
 
@@ -339,11 +298,9 @@ mean(high_income_rank)
 ## [1] 91.91304
 ```
 
-```r
-#This analysis tells us the OECD membership seems to have a remarkable impact on GDP ranking (in USD MM). While there are some decent rankings for countries not involved with the OECD, there appears to be a strong relationship between membership and economic performance, as measured in GDP. One possible reason is “(the) OECD uses its wealth of information on a broad range of topics to help governments foster prosperity and fight poverty through economic growth and financial stability…help ensure the environmental implications of economic and social development are taken into account” (http://www.oecd.org/about/whatwedoandhow/).
+This analysis tells us the OECD membership seems to have a remarkable impact on GDP ranking (in USD MM). While there are some decent rankings for countries not involved with the OECD, there appears to be a strong relationship between membership and economic performance, as measured in GDP. One possible reason is “(the) OECD uses its wealth of information on a broad range of topics to help governments foster prosperity and fight poverty through economic growth and financial stability…help ensure the environmental implications of economic and social development are taken into account” (http://www.oecd.org/about/whatwedoandhow/).
 
-#The mean difference in ranks is significant. The next section will reinforce this concept with visualizations.
-```
+The mean difference in ranks is significant. The next section will reinforce this concept with visualizations.
 
 4. Plot the GDP for all of the countries. Use ggplot2 to color your plot by Income Group
 
@@ -398,7 +355,7 @@ rowSums(count_quantile_1)
 ##                   11
 ```
                    
-
+There are five lower middle income countries in the top quantile. 
 
 
 

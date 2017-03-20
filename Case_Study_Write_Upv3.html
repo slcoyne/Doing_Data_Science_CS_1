@@ -126,15 +126,13 @@ $(document).ready(function () {
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>This analysis details the steps performed to analyze two economic data sets published by the World Bank for the year 2012. The goal of this analysis is to develop a tidy data set fit for a macroeconomic analysis. Specifically, this analysis will begin to ask if a given country’s GDP is a good indicator of income group. There are two data sources from the World Bank. The first data set (GDP) can be downloaded from either of these sites:</p>
-<p><a href="https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv">https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv</a></p>
-<p><a href="http://data.worldbank.org/data-catalog/GDP-ranking-table" class="uri">http://data.worldbank.org/data-catalog/GDP-ranking-table</a></p>
+<p>This analysis details the steps performed to analyze two economic data sets published by the World Bank for the year 2012. The goal of this analysis is to develop a tidy data set appropriate for a macroeconomic analysis. Specifically, this analysis will begin to ask if a given country’s GDP is a good indicator of income group and vice versa. There are two data sources from the World Bank. The first data set (GDP) can be downloaded from either of these sites:</p>
+<p>[<a href="https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv">https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv</a>]</p>
+<p>[<a href="http://data.worldbank.org/data-catalog/GDP-ranking-table" class="uri">http://data.worldbank.org/data-catalog/GDP-ranking-table</a>]</p>
 <p>The second data set (educational) can be downloaded from either of these sites:</p>
-<p><a href="https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv">https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv</a></p>
-<p><a href="http://data.worldbank.org/data-catalog/ed-stats" class="uri">http://data.worldbank.org/data-catalog/ed-stats</a></p>
+<p>[<a href="https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv">https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv</a>]</p>
+<p>[<a href="http://data.worldbank.org/data-catalog/ed-stats" class="uri">http://data.worldbank.org/data-catalog/ed-stats</a>]</p>
 <p>If replicating this study, be aware both data sets need to be cleaned. Also, it should be noted, the educational data set contains many more variables than we will use in this analysis. For a complete list of variables removed, please consult with the README in the Github repository.</p>
-<p>The data files are stored as follows: GDP file name (raw data only): getdata_data_GDP</p>
-<p>Education file name (raw data only): getdata_data_EDSTATS_Country</p>
 <p>*Headers are easily located in the Education data set, but be aware the GDP will require one to skip the first five lines before reading headers.</p>
 <p>*Both data sets are delimited by a comma (CSV)</p>
 <p>*The final and tidy data set consists of the following variables:</p>
@@ -144,7 +142,7 @@ $(document).ready(function () {
 <li><p>GDP_USD_MM: a given country’s GDP (gross domestic product) measured in USD ($) MM</p></li>
 <li><p>country_name: a given country’s full name</p></li>
 <li><p>income_group: a classification variable assigned by the World Bank</p></li>
-<li><p>geographic_region: geographic_region: character value giving the reader more description if unfamiliar with country’s geography</p></li>
+<li><p>geographic_region: geographic_region: character value giving the reader more description if unfamiliar with a country’s geography</p></li>
 <li><p>quantile: a simple rating (1-5) of GDP rank. There are 190 possible GDP ranks. As such, each quantile has 38 countries. Every country in a certain quantile is assigned the same quantile score.</p></li>
 </ol>
 <p>Problems with this data set:</p>
@@ -158,7 +156,7 @@ $(document).ready(function () {
 <h2>Glossary of Terms</h2>
 <p>GDP = Gross Domestic Product, “GDP is the monetary value of all the finished goods and services produced within a country’s borders in a specified time” (Investopedia.com/terms/g/gdp.asp)</p>
 <p>OECD = The Organization for Economic Co-Operation and Development: “The mission…is to promote policies that will improve the economic and social well-being of people around the world” (oecd.org/about).</p>
-<p>Raw data – The data as obtained from the World Bank. No cleaning or manipulation steps have been taken. Interested readers are encouraged to seek meaningful insight from other variables found in the raw data files. See the README for a full description of available variables.</p>
+<p>Raw data = The data as obtained from the World Bank. No cleaning or manipulation steps have been taken. Interested readers are encouraged to seek meaningful insight from other variables found in the raw data files. See the README for a full description of available variables.</p>
 </div>
 <div id="files-for-analysis" class="section level2">
 <h2>Files for Analysis:</h2>
@@ -176,7 +174,9 @@ $(document).ready(function () {
 </div>
 <div id="directions-to-run-the-code" class="section level2">
 <h2>Directions to Run the Code</h2>
-<p>The R script, main.R, will run three separate R scripts: download_packages_and_data, clean_and_merge, and analysis. If the user has specific questions relating to data cleaning, please review the script clean_and_merge. Likewise, the same is true for analysis. If the user does not need to download ggplot2 or downloader, comment these commands out with hashtag x 2. Also, if the World Bank URL’s are not working properly, store the raw data files in the proper directory and proceed with running the analysis. The end user should also be aware the final tidy data set will be written to the directory upon completion of the script. This is intended for users who wish to do additional analysis or make more visualizations.</p>
+<p>The R script, main.R, will run three separate R scripts: download_packages_and_data, clean_and_merge, and analysis. If the user has specific questions relating to data cleaning, please review the script clean_and_merge. Likewise, the same is true for analysis. If the user does not need to download ggplot2 or downloader, comment these commands out with hashtag x 2. Also, if the World Bank URL’s are not working properly, store the raw data files in the proper directory and proceed with running the analysis. The end user should also be aware the final tidy data set will be written to the working directory upon completion of the script. This is intended for users who wish to do additional analysis or make more visualizations. When the user runs main.R, the files written to the working directory are as follows:</p>
+<p>GDP file name (raw data only): getdata_data_GDP</p>
+<p>Education file name (raw data only): getdata_data_EDSTATS_Country</p>
 <p>To source the main.R script, please use the following command.</p>
 <pre class="r"><code>source(&quot;./main.R&quot;)</code></pre>
 </div>
@@ -236,13 +236,13 @@ rowSums(count_quantile_1)</code></pre>
 </div>
 <div id="conclusion" class="section level2">
 <h2>Conclusion</h2>
-<p>From the above plots and analysis, it appears the Organization for Economic Cooperation and Development (OECD), is a strong indicator of GDP performance. The organization’s purpose, “the governments of 34 democracies with market economies work with each other, as well as with more than 70 non-member economies to promote economic growth, prosperity, and sustainable development” (usoecd.ucmission.gov/mission/overview/html) is consistent with the above findings. Although GDP is not the only indicator of economic health, it is certainly a crucial part in overall health. According to the OECD, members “account for 63% of world GDP, three-quarters of world trade, and 95 percent of world official development assistance…” ( usoecd.ucmission.gov/mission/overview/html). As observed in the above analysis, 18 out of the 38 first quartile countries are fit into the income category “High income: OECD.” This is possibly due to the sharing of best practices in economic development the organization promotes. By encouraging collaboration and knowledge sharing, the OECD appears have a positive impact on a country’s GDP performance.</p>
+<p>From the above plots and analysis, it appears the Organization for Economic Cooperation and Development (OECD), is a strong indicator of GDP performance. The organization’s purpose, “the governments of 34 democracies with market economies work with each other, as well as with more than 70 non-member economies to promote economic growth, prosperity, and sustainable development” (usoecd.ucmission.gov/mission/overview/html) is consistent with the above findings. Although GDP is not the only indicator of economic health, it is certainly a crucial part in overall health. According to the OECD, members “account for 63% of world GDP, three-quarters of world trade, and 95 percent of world official development assistance…” ( usoecd.ucmission.gov/mission/overview/html). As observed in the above analysis, 18 out of the 38 first quartile countries are classified as “High income: OECD” in terms of income group. This is possibly due to the sharing of best practices in economic development the organization promotes. By encouraging collaboration and knowledge sharing, the OECD appears have a positive impact on a country’s GDP performance.</p>
 </div>
 <div id="further-work" class="section level2">
 <h2>Further Work</h2>
 <p>This analysis clarifies the relationship between OECD status and gross domestic product. To expand upon this work, it is recommended one pull in additional years from the World Bank. This time series approach would reveal macroeconomic trends in OECD countries versus nonOECD countries. Another idea for additional research is to subset the raw data by geographic regions and complete “region specific” analyses. This subset approach may help answer any geographic specific questions. Suggested R packages for the above suggested analyses are zoo and ggmap. More information on those packages can be found here:</p>
-<p><a href="https://cran.rproject.org/web/packages/ggmap/index.html" class="uri">https://cran.rproject.org/web/packages/ggmap/index.html</a></p>
-<p><a href="https://cran.r-project.org/web/packages/zoo/index.html" class="uri">https://cran.r-project.org/web/packages/zoo/index.html</a></p>
+<p>[<a href="https://cran.rproject.org/web/packages/ggmap/index.html" class="uri">https://cran.rproject.org/web/packages/ggmap/index.html</a>]</p>
+<p>[<a href="https://cran.r-project.org/web/packages/zoo/index.html" class="uri">https://cran.r-project.org/web/packages/zoo/index.html</a>]</p>
 <p>A final tidy data set is written to the user’s working directory. This may be useful if one has access to visualization software such as Tableau and would like to graphically explore more aspects of this data set.</p>
 </div>
 <div id="appendix-questions-and-answers-to-case-study-with-full-code" class="section level2">
@@ -258,32 +258,23 @@ combined_data &lt;- merge(gdp_clean_final, educ_clean_final, by=&quot;country_co
 #this calculation will count the number of NA's in this data frame.
 sum(is.na(combined_data))</code></pre>
 <pre><code>## [1] 66</code></pre>
-<pre class="r"><code>#This code tells us all NA’s found. By conducting a closer inspection of variables, we see the main issue 
-#is the mismatched countries.
+<pre class="r"><code>#This code tells us all NA’s found. By conducting a closer inspection of variables
 
 #The result is a total of 66 NA's in our data set.
 
 #However, we need to look at each variable to understand where the NAs are originating.
-sum(is.na(combined_data$country_code))</code></pre>
-<pre><code>## [1] 0</code></pre>
-<pre class="r"><code>sum(is.na(combined_data$ranking))</code></pre>
+#sum(is.na(combined_data$country_code))
+#sum(is.na(combined_data$ranking))
+sum(is.na(combined_data$economy))</code></pre>
 <pre><code>## [1] 21</code></pre>
-<pre class="r"><code>sum(is.na(combined_data$economy))</code></pre>
-<pre><code>## [1] 21</code></pre>
-<pre class="r"><code>sum(is.na(combined_data$GDP_USD_MM))</code></pre>
-<pre><code>## [1] 21</code></pre>
-<pre class="r"><code>sum(is.na(combined_data$country_name))</code></pre>
-<pre><code>## [1] 1</code></pre>
-<pre class="r"><code>sum(is.na(combined_data$income_group))</code></pre>
-<pre><code>## [1] 1</code></pre>
-<pre class="r"><code>sum(is.na(combined_data$geographic_region))</code></pre>
-<pre><code>## [1] 1</code></pre>
-<pre class="r"><code>#The above tells us that 21 NAs are found in neighboring columns/variables: ranking, economy, and GDP.  
-#There are 211 countries in the resulting data frame 21 countries do not match on country code and 190 match on country code.
-
-#The below code is not executed due to length. However, use this R code to see a list of countries that do not match.
-
-#combined_data[is.na(combined_data$economy),]</code></pre>
+<pre class="r"><code>#sum(is.na(combined_data$GDP_USD_MM))
+#sum(is.na(combined_data$country_name))
+#sum(is.na(combined_data$income_group))
+#sum(is.na(combined_data$geographic_region))</code></pre>
+<p>The above tells us that 21 NAs are found in neighboring columns/variables: ranking, economy, and GDP.<br />
+There are 211 countries in the resulting data frame 21 countries do not match on country code and 190 match on country code.</p>
+<p>The below code is not executed due to length. However, use this R code to see a list of countries that do not match.</p>
+<p>combined_data[is.na(combined_data$economy),]</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Sort the data frame in ascending order by GDP (so United States is last). What is the 13th country in the resulting data frame?</li>
 </ol>
@@ -297,10 +288,9 @@ detach(combined_data_final)
 look_at_all_na &lt;- apply(combined_data_final_sorted, 1, function(x){any(is.na(x))})
 
 #make an object to filter out the NA's
-combined_data_final_sorted_filtered &lt;- combined_data_final_sorted[!look_at_all_na,]
-
-#We find the 13th country in the resulting data frame to be St. Kitts and Nevis ($767MM GDP) tied with Grenada.
-#The relatively low GDP of Saint Kitts and Nevis is “likely due to the declining state-owned sugar company…” as well as &quot;S. Kitts is dependent upon tourism to drive #its economy&quot; (https://en.wikipedia.org/wiki/Saint_Kitts).</code></pre>
+combined_data_final_sorted_filtered &lt;- combined_data_final_sorted[!look_at_all_na,]</code></pre>
+<p>We find the 13th country in the resulting data frame to be St. Kitts and Nevis ($767MM GDP) tied with Grenada.</p>
+<p>The relatively low GDP of Saint Kitts and Nevis is “likely due to the declining state-owned sugar company…” as well as “S. Kitts is dependent upon tourism to drive #its economy” (<a href="https://en.wikipedia.org/wiki/Saint_Kitts" class="uri">https://en.wikipedia.org/wiki/Saint_Kitts</a>).</p>
 <ol start="3" style="list-style-type: decimal">
 <li>What are the average GDP rankings for the “High income: OECD” and “High income: nonOECD” groups?</li>
 </ol>
@@ -327,9 +317,8 @@ high_income_nonOECD &lt;-  combined_data_final_sorted_filtered[combined_data_fin
 high_income_rank &lt;- high_income_nonOECD$ranking
 mean(high_income_rank)</code></pre>
 <pre><code>## [1] 91.91304</code></pre>
-<pre class="r"><code>#This analysis tells us the OECD membership seems to have a remarkable impact on GDP ranking (in USD MM). While there are some decent rankings for countries not involved with the OECD, there appears to be a strong relationship between membership and economic performance, as measured in GDP. One possible reason is “(the) OECD uses its wealth of information on a broad range of topics to help governments foster prosperity and fight poverty through economic growth and financial stability…help ensure the environmental implications of economic and social development are taken into account” (http://www.oecd.org/about/whatwedoandhow/).
-
-#The mean difference in ranks is significant. The next section will reinforce this concept with visualizations.</code></pre>
+<p>This analysis tells us the OECD membership seems to have a remarkable impact on GDP ranking (in USD MM). While there are some decent rankings for countries not involved with the OECD, there appears to be a strong relationship between membership and economic performance, as measured in GDP. One possible reason is “(the) OECD uses its wealth of information on a broad range of topics to help governments foster prosperity and fight poverty through economic growth and financial stability…help ensure the environmental implications of economic and social development are taken into account” (<a href="http://www.oecd.org/about/whatwedoandhow/" class="uri">http://www.oecd.org/about/whatwedoandhow/</a>).</p>
+<p>The mean difference in ranks is significant. The next section will reinforce this concept with visualizations.</p>
 <ol start="4" style="list-style-type: decimal">
 <li>Plot the GDP for all of the countries. Use ggplot2 to color your plot by Income Group</li>
 </ol>
@@ -368,6 +357,7 @@ rowSums(count_quantile_1)</code></pre>
 ##                    4                   18                    5 
 ##  Upper middle income 
 ##                   11</code></pre>
+<p>There are five lower middle income countries in the top quantile.</p>
 </div>
 
 
