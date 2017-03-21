@@ -38,7 +38,7 @@ If replicating this study, be aware both data sets need to be cleaned. Also, it 
 
 7. quantile: a simple rating (1-5) of GDP rank. There are 190 possible GDP ranks. As such, each quantile has 38 countries. Every country in a certain quantile is     assigned the same quantile score.
 
-# Problems with this data set:
+# Problems with this Data Set
 
 1. There are some unique identifiers that are not a country. For example, “low income” has a three-letter code of LIC. Such codes may be mistaken for a country on the first pass of an analysis. Please refer to all data cleansing steps in the clean_and_merge R script found in the Github repository.  
 
