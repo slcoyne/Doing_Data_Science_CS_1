@@ -205,7 +205,7 @@ sum(is.na(combined_data))
 ```
 
 ```r
-#This code tells us all NA’s found. By conducting a closer inspection of variables
+#This code tells us all NA’s found.
 
 #The result is a total of 66 NA's in our data set.
 
