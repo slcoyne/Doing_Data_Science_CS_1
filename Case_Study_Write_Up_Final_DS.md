@@ -1,7 +1,8 @@
 # Case Study 1 Write Up
 Sam Coyne  
-March 20, 2017  
-##Introduction
+March 20, 2017
+
+# Introduction
 
 This analysis details the steps performed to analyze two economic data sets published by the World Bank for the year 2012. The goal of this analysis is to develop a tidy data set appropriate for a macroeconomic analysis. Specifically, this analysis will begin to ask if a given country’s GDP is a good indicator of income group and vice versa. There are two data sources from the World Bank. The first data set (GDP) can be downloaded from either of these sites:
 
@@ -37,7 +38,7 @@ If replicating this study, be aware both data sets need to be cleaned. Also, it 
 
 7. quantile: a simple rating (1-5) of GDP rank. There are 190 possible GDP ranks. As such, each quantile has 38 countries. Every country in a certain quantile is     assigned the same quantile score.
 
-Problems with this data set
+# Problems with this Data Set
 
 1. There are some unique identifiers that are not a country. For example, “low income” has a three-letter code of LIC. Such codes may be mistaken for a country on the first pass of an analysis. Please refer to all data cleansing steps in the clean_and_merge R script found in the Github repository.  
 
@@ -45,14 +46,14 @@ Problems with this data set
 
 3. Some countries are missing GDP values. As such, they will be excluded from this analysis. The following countries do not have a reported GDP in this data set: American Samoa (ASM), Andorra (ADO), Cayman Islands (CYM), Channel Islands (CHI), Curacao (CUW), Djibouti (DJI), Faeroe Islands (FRO), French Polynesia (PYF), Greenland (GRL), Guam (GUM), Isle of Man (IMY), Democratic People’s Republic of Korea (PRK), Libya (LBY), Liechtenstein (LIE), Myanmar (MMR), New Caledonia (NCL), Northern Mariana Islands (MNP), San Marino (SMR), Sint Maarten (SXM-Dutch Part), Somalia (SOM), St. Martin (French Part-MAF), Turks and Caicos Islands (TCA), Virgin Islands-U.S. (VIR), West Bank and Gaza (WBG).  
 
-##Glossary of Terms
+# Glossary of Terms
 GDP = Gross Domestic Product, "GDP is the monetary value of all the finished goods and services produced within a country's borders in a specified time" (Investopedia.com/terms/g/gdp.asp)
 
 OECD = The Organization for Economic Co-Operation and Development: "The mission...is to promote policies that will improve the economic and social well-being of people around the world" (oecd.org/about).
 
 Raw data = The data as obtained from the World Bank. No cleaning or manipulation steps have been taken. Interested readers are encouraged to seek meaningful insight from other variables found in the raw data files. See the README for a full description of available variables. 
 
-##Files for Analysis:
+# Files for Analysis
 
 1. README: a thesis statement followed by final a description of all variables.
 
@@ -72,7 +73,7 @@ Raw data = The data as obtained from the World Bank. No cleaning or manipulation
   
     *quantile analysis based on GDP ranks
 
-##Directions to Run the Code
+# Directions to Run the Code
 The R script, main.R, will run three separate R scripts: download_packages_and_data, clean_and_merge, and analysis. If the user has specific questions relating to data cleaning, please review the script clean_and_merge. Likewise, the same is true for analysis. If the user does not need to download ggplot2 or downloader, comment these commands out with hashtag x 2. Also, if the World Bank URL's are not working properly, store the raw data files in the proper directory and proceed with running the analysis. The end user should also be aware the final tidy data set will be written to the working directory upon completion of the script. This is intended for users who wish to do additional analysis or make more visualizations. When the user runs main.R, the files written to the working directory are as follows:
 
 GDP file name (raw data only): getdata_data_GDP
@@ -85,7 +86,7 @@ To source the main.R script, please use the following command.
 source("./main.R")
 ```
 
-##Analysis
+# Analysis
 One area of interest in this analysis is analyzing the differences in economic performance of countries that are classified as OECD versus those that are classified as nonOECD. This analysis approaches that problem by first looking at those exact differences: OECD vs. nonOECD. To keep classifications consistent, we will use the same income group, high income.
 
 
@@ -172,11 +173,11 @@ rowSums(count_quantile_1)
 
 As one can see, the quantiles are evenly distributed with 38 countries appearing in each quantile. A table calculation reveals that there are only five lower middle income countries in quantile one. Not surprisingly, High Income: OECD countries still lead the count in this analysis with 18 of the top rank positions, or 47.37%.
 
-##Conclusion
+# Conclusion
 From the above plots and analysis, it appears the Organization for Economic Cooperation and Development (OECD), is a strong indicator of GDP performance. The organization’s purpose, “the governments of 34 democracies with market economies work with each other, as well as with more than 70 non-member economies to promote economic growth, prosperity, and sustainable development” (usoecd.ucmission.gov/mission/overview/html) is consistent with the above findings. Although GDP is not the only indicator of economic health, it is certainly a crucial part in overall health. According to the OECD, members “account for 63% of world GDP, three-quarters of world trade, and 95 percent of world official development assistance…” ( usoecd.ucmission.gov/mission/overview/html). As observed in the above analysis, 18 out of the 38 first quartile countries are classified as “High income: OECD” in terms of income group. This is possibly due to the sharing of best practices in economic development the organization promotes. By encouraging collaboration and knowledge sharing, the OECD appears have a positive impact on a country’s GDP performance. 
 
 
-##Further Work
+# Further Work
 This analysis clarifies the relationship between OECD status and gross domestic product. To expand upon this work, it is recommended one pull in additional years from the World Bank. This time series approach would reveal macroeconomic trends in OECD countries versus nonOECD countries. Another idea for additional research is to subset the raw data by geographic regions and complete “region specific” analyses. This subset approach may help answer any geographic specific questions. Suggested R packages for the above suggested analyses are zoo and ggmap. More information on those packages can be found here: 
 
 [https://cran.rproject.org/web/packages/ggmap/index.html]
@@ -185,7 +186,7 @@ This analysis clarifies the relationship between OECD status and gross domestic 
 
 A final tidy data set is written to the user’s working directory. This may be useful if one has access to visualization software such as Tableau and would like to graphically explore more aspects of this data set. 
 
-##Appendix-Questions and Answers to Case Study with Full Code
+# Appendix-Questions and Answers to Case Study with Full Code
 1. Merge the data based on the country shortcode. How many of the IDs match? 
 
 You can find this code in the clean_and_merge R script. 
@@ -204,7 +205,7 @@ sum(is.na(combined_data))
 ```
 
 ```r
-#This code tells us all NA’s found. By conducting a closer inspection of variables
+#This code tells us all NA’s found.
 
 #The result is a total of 66 NA's in our data set.
 
@@ -226,7 +227,7 @@ sum(is.na(combined_data$economy))
 ```
 
 The above tells us that 21 NAs are found in neighboring columns/variables: ranking, economy, and GDP.  
-There are 211 countries in the resulting data frame 21 countries do not match on country code and 190 match on country code.
+There are 211 countries in the resulting data frame 21 countries do not match on country code and 190 match on country code. The above code is not executed due to length. The purpose is to demonstrate a useful script to check variables for NA's.
 
 The below code is not executed due to length. However, use this R code to see a list of countries that do not match.
 
