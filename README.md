@@ -19,8 +19,11 @@ downloader - version 0.4
 There are four branches to this repository: master, analysis, data, and summary.
 
 master-all of the files are contained here
+
 analysis-all of the R scripts needed to run the analysis are located here
+
 data-raw data files can be found here
+
 summary-all of the summary files can be found here. This branch is considered to be the "presentation documents" of this study.
 
 Source files:
