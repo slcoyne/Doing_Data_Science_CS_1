@@ -53,7 +53,7 @@ OECD = The Organization for Economic Co-Operation and Development: "The mission.
 
 Raw data = The data as obtained from the World Bank. No cleaning or manipulation steps have been taken. Interested readers are encouraged to seek meaningful insight from other variables found in the raw data files. See the README for a full description of available variables. 
 
-# Files for Analysis:
+# Files for Analysis
 
 1. README: a thesis statement followed by final a description of all variables.
 
