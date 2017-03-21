@@ -7,9 +7,9 @@ The purpose of this project is to demonstrate the steps to clean a messy data se
 
 The title of this project is "Doing Data Science CS 1"
 
-Detailed instructions for running the program can be found in the md file "Case_Study_Write_Up_Final_DS." For those interested in running this program, download all of the .R scripts. Main.R is the "master script" that ties all of the others together. Once the individual scripts are downloaded, please run main.R. For those interested in seeing detailed data cleaning steps, please refer to the detailed comments in the clean_and_merge R scipt.
+Detailed instructions for running the program can be found in the md file "Case_Study_Write_Up_Final_DS." For those interested in running this program, download all of the .R scripts. Main.R is the "master script" that ties all of the others together. Once the individual scripts are downloaded, please run main.R. For those interested in seeing detailed data cleaning steps, please refer to the detailed comments in the clean_and_merge R script.
 
-This analysis was performed using R versin 3.3.2. The platform is x86_64-264-mingw32/x64 (64 bit), running under: windows >= 8 x64
+This analysis was performed using R version 3.3.2. The platform is x86_64-264-mingw32/x64 (64 bit), running under: windows >= 8 x64
 
 The packages needed to complete this analysis are as follows:
 ggplot2 - version 2.2.1
@@ -23,7 +23,7 @@ analysis-all of the R scripts needed to run the analysis are located here
 
 data-raw data files can be found here
 
-summary-all of the summary files can be found here. This branch is considered to be the "presentation documents" of this study.
+summary-all of the summary files can be found here. This branch contains the "presentation documents" of this study.
 
 Source files:
 Original filename: getdata_data_EDSTATS_Country
