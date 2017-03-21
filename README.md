@@ -5,7 +5,7 @@ This case study accomplishes data cleansing, merging, analysis, and visualizatio
 
 The purpose of this project is to demonstrate the steps to clean a messy data set, analyze, graph, and make conclusions from two World Bank data sets.
 
-The title of this project is "Case Study 1 for Doing Data Science"
+The title of this project is "Doing Data Science CS 1"
 
 Detailed instructions for running the program can be found in the md file "Case_Study_Write_Up_Final_DS." For those interested in running this program, download all of the .R scripts. Main.R is the "master script" that ties all of the others together. Once the individual scripts are downloaded, please run main.R. For those interested in seeing detailed data cleaning steps, please refer to the detailed comments in the clean_and_merge R scipt.
 
